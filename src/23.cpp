@@ -6,7 +6,62 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
+
+class Compare{
+public:
+    bool operator() (ListNode* a, ListNode* b){
+        return a->val > b->val;
+    }
+};
+
+class Solution{
+public:
+	ListNode* mergeKLists(std::vector<ListNode*>& lists){
+		ListNode* pesudo_head = new ListNode(0);
+		ListNode* head = pesudo_head;
+
+        int empty_cnt = 0;
+        priority_queue<ListNode*, vector<ListNode*>, Compare> heap;
+        for (int i=0; i<lists.size(); i++){
+            if (lists[i] != nullptr){
+                heap.push(lists[i]);
+            } else {
+                empty_cnt ++;
+            }
+        }
+        
+        while (empty_cnt != lists.size()){
+            head->next = heap.top();
+            heap.pop();
+            head = head->next;
+            if (head->next == nullptr){
+                empty_cnt ++;
+            } else {
+                heap.push(head->next);
+            }
+        }
+
+		ListNode* ans = pesudo_head->next;
+		delete pesudo_head;
+		return ans;
+	}
+};
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+
+/*
+ * This solution should have a speed of O(nm lg m).
+ * But it is not stable. We will change to another one.
+ *
+ */
+class SolutionTLE {
 public:
     ListNode* mergeTwoLists(ListNode* a, ListNode* b){
         if (a == nullptr) { return b; }
