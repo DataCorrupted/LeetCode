@@ -8,20 +8,21 @@
  */
 class Solution {
 public:
-    void reverse(ListNode* head, ListNode* end){
+    void reverse(ListNode* head, ListNode* end, int k){
         ListNode* curr = head;
         ListNode* prev = end->next;
         ListNode* next = head->next;
-        while (true){
+
+        for (int i=0; i<k; i++){
             curr->next = prev;
             prev = curr;
             curr = next;
-            if (curr = end->next) { return; }
-            next = next->next;
+            if (next != nullptr) { next = next->next; }
         }
-        
+       
     }
     ListNode* reverseKGroup(ListNode* head, int k) {
+        if (k == 1) { return head; }
         ListNode tmp = ListNode(0);
         ListNode* pesudo_head = &tmp;
         pesudo_head->next = head;
@@ -34,12 +35,13 @@ public:
                     return pesudo_head->next;
                 }
             }
-            reverse(head->next, end);
-            ListNode* next_head = head->next;
-            head->next = end;
-            head = next_head;
+            reverse(begin->next, end, k);
+            ListNode* next_head = begin->next;
+            begin->next = end;
+            begin = next_head;
             end = next_head;
-            
+            //cout << pesudo_head->next->next->val;
         }
+        return pesudo_head->next;
     }
 };
