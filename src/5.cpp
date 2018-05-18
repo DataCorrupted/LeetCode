@@ -1,3 +1,4 @@
+// https://blog.csdn.net/ggggiqnypgjg/article/details/6645824/
 class Solution {
 public:
 	const vector<int> generateMaxPaliVec(const string str) const{
