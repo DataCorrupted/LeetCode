@@ -8,14 +8,13 @@
 
 using namespace std;
 
-#include "44.cpp"
+#include "78.cpp"
 
 int main(){
-	string s = "aaaa";
-	string p = "ab*ac*a";
+	vector<int> v;
 
 	Solution solver;
-	string result = solver.longestPalindrome(s);
-	cout << result << endl;
+	auto result = solver.subsets(v);
+	cout << result.size();
 }
 
