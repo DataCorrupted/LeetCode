@@ -8,11 +8,12 @@
 
 using namespace std;
 
-#include "10.cpp"
+#include "44.cpp"
 
 int main(){
-	string s = "aaa";
-	string p = "ab*ac*a";
+	
+	string s = "abbabaaabbabbaababbabbbbbabbbabbbabaaaaababababbbabababaabbababaabbbbbbaaaabababbbaabbbbaabbbbababababbaabbaababaabbbababababbbbaaabbbbbabaaaabbababbbbaababaabbababbbbbababbbabaaaaaaaabbbbbaabaaababaaaabb";
+	string p = "**aa*****ba*a*bb**aa*ab****a*aaaaaa***a*aaaa**bbabb*b*b**aaaaaaaaa*a********ba*bbb***a*ba*bb*bb**a*b*bb";
 
 	Solution solver;
 	bool result = solver.isMatch(s, p);
