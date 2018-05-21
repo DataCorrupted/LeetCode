@@ -8,15 +8,15 @@
 
 using namespace std;
 
-#include "58.cpp"
+#include "66.cpp"
 #include "printUtil.cpp"
 
 int main(){
-	vector<int> v({1, 2, 3});
+	vector<int> v({9, 9});
 	string s = "a ";
 
 	Solution solver;
-	auto result = solver.lengthOfLastWord(s);
+	auto result = solver.plusOne(v);
 	cout << result;
 }
 
