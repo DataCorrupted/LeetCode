@@ -43,3 +43,14 @@ ostream& operator << ( ostream& o, map<K, V>& m){
 	o << "}\n";
 	return o;
 }
+
+class Bool{
+public:
+	bool b_;
+	Bool(bool b): b_(b){;}
+	string getBoolean(){ return (b_)? "true": "false"; }
+};
+
+ostream& operator << (ostream& o, Bool b){
+	o << b.getBoolean();
+}
