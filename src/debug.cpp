@@ -9,13 +9,13 @@
 using namespace std;
 
 #include "printUtil.cpp"
-#include "42.cpp"
+#include "65.cpp"
 
 int main(){
-	vector<int> v({2, 0, 2});
-
+	string s;
+	cin >> s;
 	Solution solver;
-	auto result = solver.trap(v);
-	cout << result;
+	auto result = solver.isNumber(s);
+	cout << ((result == true)? "true": "false");
 }
 
