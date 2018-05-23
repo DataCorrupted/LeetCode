@@ -9,14 +9,13 @@
 using namespace std;
 
 #include "printUtil.cpp"
-#include "40.cpp"
+#include "42.cpp"
 
 int main(){
-	vector<int> v({2,5,2,1,2});
-	string s = "a ";
+	vector<int> v({2, 0, 2});
 
 	Solution solver;
-	auto result = solver.combinationSum2(v, 5);
+	auto result = solver.trap(v);
 	cout << result;
 }
 
