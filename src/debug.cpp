@@ -8,15 +8,15 @@
 
 using namespace std;
 
-#include "11.cpp"
 #include "printUtil.cpp"
+#include "40.cpp"
 
 int main(){
-	vector<int> v({4, 6, 2, 6, 7, 11, 2});
+	vector<int> v({2,5,2,1,2});
 	string s = "a ";
 
 	Solution solver;
-	auto result = solver.maxArea(v);
+	auto result = solver.combinationSum2(v, 5);
 	cout << result;
 }
 

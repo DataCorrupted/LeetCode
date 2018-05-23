@@ -1,42 +1,36 @@
 class Solution {
 public:
-    map<int, vector<vector<int> > > combo_map;
-    const vector<vector<int> > recursiveCombSum(const vector<int>& candidates, const int target){
-        if (combo_map[target].size() != 0){
-            return combo_map[target];
-        }
-        for (int i=0; i<candidates.size(); i++){
-            if (target - candidates[i] >= 0){
-                auto temp = recursiveCombSum(candidates, target-candidates[i]);
-                for (int j=0; j<temp.size(); j++){
-                    auto vec = temp[j];
-                    if (vec.size() == 0 || candidates[i] <= vec[0]){
-                        vec.insert(vec.begin(), candidates[i]);
-                        combo_map[target].push_back(vec);
-                    }
-                }
-            }
-        }
-        return combo_map[target];
-    }
-        
-    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-        combo_map[0] = vector<vector<int> >();
-        combo_map[0].push_back(vector<int>());
-        sort(candidates.begin(), candidates.end());
-        return recursiveCombSum(candidates, target);
-    }
-};
+	map<int, int> num_left;
 
-int main(){
-	int arr[] = {5,10,8,4,3,12,9};
-	vector<int> v = vector<int>(arr, arr + 7);
-	Solution s;
-	auto vec = s.combinationSum(v, 27);
-	for (int i=0; i<vec.size(); i++){
-		for (int j=0; j<vec[i].size(); j++){
-			cout << vec[i][j] << " ";
+	const vector<vector<int> > recursiveCombSum(const int target){
+		vector<vector<int> > v;
+		if (target == 0){
+			v.push_back(vector<int>());
+			return v;
 		}
-		cout << "\n";
+		for (auto iter=num_left.begin(); iter!=num_left.end(); ++iter){
+			int candidate = iter->first;
+			if (iter->second && target - candidate >= 0){
+				iter->second --;
+				auto temp = recursiveCombSum(target-candidate);
+				iter->second ++;
+				for (int j=0; j<temp.size(); j++){
+					auto vec = temp[j];
+					if (vec.size() == 0 || candidate <= vec[0]){
+						vec.insert(vec.begin(), candidate);
+						v.push_back(vec);
+					}
+				}
+				
+			}
+		}
+		return v;
 	}
-}
+		
+	vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+		for (int i=0; i<candidates.size(); i++){
+			num_left[candidates[i]] += 1;
+		}
+		return recursiveCombSum(target);
+	}
+};
