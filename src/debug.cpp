@@ -9,13 +9,12 @@
 using namespace std;
 
 #include "printUtil.cpp"
-#include "65.cpp"
+#include "69.cpp"
 
 int main(){
-	string s;
-	cin >> s;
+	int k = 9;
 	Solution solver;
-	auto result = solver.isNumber(s);
-	cout << ((result == true)? "true": "false");
+	auto result = solver.mySqrt(k);
+	cout << result;
 }
 
