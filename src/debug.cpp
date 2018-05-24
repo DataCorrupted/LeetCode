@@ -9,12 +9,14 @@
 using namespace std;
 
 #include "printUtil.cpp"
-#include "69.cpp"
+#include "67.cpp"
 
 int main(){
-	int k = 9;
+	string a = "1010";
+	string b = "1011";
+
 	Solution solver;
-	auto result = solver.mySqrt(k);
+	auto result = solver.addBinary(a, b);
 	cout << result;
 }
 
