@@ -29,7 +29,6 @@ public:
 
 	int search(vector<int>& nums, int target) {
 		if (nums.size() == 0) { return -1; }
-		if (nums.size() == 1) { return (nums[0] == target)? 0: -1; }
 		int mid = nums.size() - 1;
 		// Search for the split point.
 		// nums[end] is max; nums[begin] is min
