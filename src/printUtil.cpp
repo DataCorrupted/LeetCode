@@ -12,10 +12,10 @@ using namespace std;
 template <class T>
 ostream& operator << (ostream& o, vector<T>& v){
 	o << '[';
-	for (int i=0; i<v.size(); i++){
+	for (unsigned i=0; i<v.size(); i++){
 		o << v[i];
 		if (i != v.size() - 1) {
-			o << ", ";
+			o << ", \n";
 		}
 	}	
 	o << "]\n";
@@ -42,15 +42,4 @@ ostream& operator << ( ostream& o, map<K, V>& m){
 	}
 	o << "}\n";
 	return o;
-}
-
-class Bool{
-public:
-	bool b_;
-	Bool(bool b): b_(b){;}
-	string getBoolean(){ return (b_)? "true": "false"; }
-};
-
-ostream& operator << (ostream& o, Bool b){
-	o << b.getBoolean();
 }

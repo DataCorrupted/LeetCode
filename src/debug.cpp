@@ -9,14 +9,18 @@
 using namespace std;
 
 #include "printUtil.cpp"
-#include "70.cpp"
+#include "68.cpp"
 
 int main(){
-	string a = "1010";
-	string b = "1011";
-
 	Solution solver;
-	auto result = solver.climbStairs(4);
-	cout << result << endl;
+	std::vector<string> v = {"This", "is", "an", "example", "of", "text", "justification."};
+	std::vector<string> groundTruth = {
+			"What   must   be",
+			"acknowledgment  ",
+			"shall be        "
+	};
+	int maxWidth = 16;
+	auto result = solver.fullJustify(v, maxWidth);
+	cout << result;
 }
 

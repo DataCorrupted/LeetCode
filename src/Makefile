@@ -1,4 +1,4 @@
-CFLAGS=-std=c++14
+CFLAGS=-std=c++14 -DDEBUG -Wall -Wextra -Wunreachable-code -Werror
 PREFIX=../bin/
 
 all:
