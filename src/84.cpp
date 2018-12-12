@@ -5,6 +5,7 @@ public:
 		unsigned maxSize = 0;
 		for (int i=0; i<heights.size(); i++){
 
+			int startPt = i;
 			while (maxHeight.size() != 0 && maxHeight.top().first > heights[i]){
 				std::pair<int, int> heightPair = maxHeight.top();
 				maxHeight.pop();
@@ -13,13 +14,15 @@ public:
 				if (height * length > maxSize){
 					maxSize = height * length;
 				}
+				startPt = heightPair.second;
+
 			}
 
 			if (maxHeight.size() != 0 && maxHeight.top().first == heights[i]) {
 				continue;
 			}
 
-			maxHeight.push(std::pair<int, int>(heights[i], i));
+			maxHeight.push(std::pair<int, int>(heights[i], startPt));
 		}
 		while (maxHeight.size() != 0){
 			std::pair<int, int> heightPair = maxHeight.top();
