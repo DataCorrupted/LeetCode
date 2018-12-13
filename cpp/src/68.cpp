@@ -64,59 +64,64 @@ public:
 		}
 		return text;
 	}
-
-	static bool test0(){
-		std::vector<string> v = {"This", "is", "an", "example", "of", "text", "justification."};
-		std::vector<string> groundTruth = {
-				"This    is    an",
-				"example  of text",
-				"justification.  "
-		};
-		int maxWidth = 16;
-		auto result = Solution().fullJustify(v, maxWidth);
-		return result == groundTruth;
-	}
-	static bool test1(){
-		std::vector<string> v = {"What","must","be","acknowledgment","shall","be"};
-		std::vector<string> groundTruth = {
-				"What   must   be",
-				"acknowledgment  ",
-				"shall be        "
-		};
-		int maxWidth = 16;
-		auto result = Solution().fullJustify(v, maxWidth);
-		return result == groundTruth;
-	}
-	static bool test2(){
-		std::vector<string> v = {
-				"Science","is","what","we","understand","well","enough","to","explain",
-				"to","a","computer.","Art","is","everything","else","we","do"
-		};
-		std::vector<string> groundTruth = {
-				"Science  is  what we",
-				"understand      well",
-				"enough to explain to",
-				"a  computer.  Art is",
-				"everything  else  we",
-				"do                  "
-		};
-		int maxWidth = 20;
-		auto result = Solution().fullJustify(v, maxWidth);
-		return result == groundTruth;
-	}
-	static bool test3(){
-		std::vector<string> v = {
-				"Don't","go","around","saying","the","world","owes","you","a","living;",
-				"the","world","owes","you","nothing;","it","was","here","first."
-		};
-		std::vector<string> groundTruth = {
-				"Don't  go  around  saying  the",
-				"world  owes  you a living; the",
-				"world owes you nothing; it was",
-				"here first.                   ",
-		};
-		int maxWidth = 30;
-		auto result = Solution().fullJustify(v, maxWidth);
-		return result == groundTruth;
-	}
 };
+
+#ifdef DEBUG
+
+#include "debugUtil.h"
+
+REGISTER_TEST(0){
+	std::vector<string> v = {"This", "is", "an", "example", "of", "text", "justification."};
+	std::vector<string> groundTruth = {
+			"This    is    an",
+			"example  of text",
+			"justification.  "
+	};
+	int maxWidth = 16;
+	auto result = Solution().fullJustify(v, maxWidth);
+	return result == groundTruth;
+}
+REGISTER_TEST(1){
+	std::vector<string> v = {"What","must","be","acknowledgment","shall","be"};
+	std::vector<string> groundTruth = {
+			"What   must   be",
+			"acknowledgment  ",
+			"shall be        "
+	};
+	int maxWidth = 16;
+	auto result = Solution().fullJustify(v, maxWidth);
+	return result == groundTruth;
+}
+REGISTER_TEST(2){
+	std::vector<string> v = {
+			"Science","is","what","we","understand","well","enough","to","explain",
+			"to","a","computer.","Art","is","everything","else","we","do"
+	};
+	std::vector<string> groundTruth = {
+			"Science  is  what we",
+			"understand      well",
+			"enough to explain to",
+			"a  computer.  Art is",
+			"everything  else  we",
+			"do                  "
+	};
+	int maxWidth = 20;
+	auto result = Solution().fullJustify(v, maxWidth);
+	return result == groundTruth;
+}
+REGISTER_TEST(3){
+	std::vector<string> v = {
+			"Don't","go","around","saying","the","world","owes","you","a","living;",
+			"the","world","owes","you","nothing;","it","was","here","first."
+	};
+	std::vector<string> groundTruth = {
+			"Don't  go  around  saying  the",
+			"world  owes  you a living; the",
+			"world owes you nothing; it was",
+			"here first.                   ",
+	};
+	int maxWidth = 30;
+	auto result = Solution().fullJustify(v, maxWidth);
+	return result == groundTruth;
+}
+#endif

@@ -8,7 +8,7 @@
 
 using namespace std;
 
-#include "printUtil.cpp"
+#include "printUtil.h"
 #include "68.cpp"
 
 int main(){

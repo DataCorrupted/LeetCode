@@ -47,29 +47,33 @@ public:
 		}
 		return (nums[l+1] != target) ? -1: l+1;
 	}
-
-	static bool test0(){
-		int target = 0;
-		std::vector<int> nums = {4, 5, 6, 7, 0, 1, 2};
-		int groundTruth = 4;
-		return Solution().search(nums, target) == groundTruth;
-	}
-	static bool test1(){
-		int target = 3;
-		std::vector<int> nums = {1, 3, 5};
-		int groundTruth = 1;
-		return Solution().search(nums, target) == groundTruth;
-	}
-	static bool test2(){
-		int target = 0;
-		std::vector<int> nums = {1};
-		int groundTruth = -1;
-		return Solution().search(nums, target) == groundTruth;
-	}
-	static bool test3(){
-		int target = 1;
-		std::vector<int> nums = {1, 2, 3, 4, 5};
-		int groundTruth = 0;
-		return Solution().search(nums, target) == groundTruth;
-	}
 };
+
+#ifdef DEBUG
+#include "debugUtil.h"
+REGISTER_TEST(0){
+	int target = 0;
+	std::vector<int> nums = {4, 5, 6, 7, 0, 1, 2};
+	int groundTruth = 4;
+	return Solution().search(nums, target) == groundTruth;
+}
+REGISTER_TEST(1){
+	int target = 3;
+	std::vector<int> nums = {1, 3, 5};
+	int groundTruth = 1;
+	return Solution().search(nums, target) == groundTruth;
+}
+REGISTER_TEST(2){
+	int target = 0;
+	std::vector<int> nums = {1};
+	int groundTruth = -1;
+	return Solution().search(nums, target) == groundTruth;
+}
+REGISTER_TEST(3){
+	int target = 1;
+	std::vector<int> nums = {1, 2, 3, 4, 5};
+	int groundTruth = 0;
+	return Solution().search(nums, target) == groundTruth;
+}
+
+#endif

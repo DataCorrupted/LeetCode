@@ -8,7 +8,7 @@ public:
         par.push(')');
         len.push(0);
         
-        for (int i=0; i<s.size(); i++){
+        for (unsigned i=0; i<s.size(); i++){
             if (s[i] == ')' && par.top() == '('){
                 int curr_len = len.top();
                 len.pop();

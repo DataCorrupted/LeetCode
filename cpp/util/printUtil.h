@@ -1,3 +1,6 @@
+#ifndef PRINT_UTIL
+#define PRINT_UTIL
+
 #include <iostream>
 #include <map>
 #include <vector>
@@ -43,3 +46,5 @@ ostream& operator << ( ostream& o, map<K, V>& m){
 	o << "}\n";
 	return o;
 }
+
+#endif

@@ -2,8 +2,8 @@ class Solution {
 public:
 	int largestRectangleArea(vector<int>& heights) {
 		std::stack<std::pair<int,int> > maxHeight;
-		unsigned maxSize = 0;
-		for (int i=0; i<heights.size(); i++){
+		int maxSize = 0;
+		for (unsigned i=0; i<heights.size(); i++){
 
 			int startPt = i;
 			while (maxHeight.size() != 0 && maxHeight.top().first > heights[i]){
@@ -35,25 +35,29 @@ public:
 		}
 		return maxSize;
 	}
-
-	static bool test0(){
-		std::vector<int> v = {2,1,5,6,2,3};
-		int groundTruth = 10;
-		return Solution().largestRectangleArea(v) == groundTruth;
-	}
-	static bool test1(){
-		std::vector<int> v = {2,2,2,2,2,2};
-		int groundTruth = 12;
-		return Solution().largestRectangleArea(v) == groundTruth;
-	}
-	static bool test2(){
-		std::vector<int> v = {1, 2, 3, 4, 5, 4, 3, 2, 1};
-		int groundTruth = 15;
-		return Solution().largestRectangleArea(v) == groundTruth;
-	}
-	static bool test3(){
-		std::vector<int> v = {1, 2, 3, 0, 2, 2, 1, 4, 0, 0, 3, 3, 3, 5, 3, 0};
-		int groundTruth = 15;
-		return Solution().largestRectangleArea(v) == groundTruth;
-	}
 };
+
+#ifdef DEBUG
+#include "debugUtil.h"
+
+REGISTER_TEST(0){
+	std::vector<int> v = {2,1,5,6,2,3};
+	int groundTruth = 10;
+	return Solution().largestRectangleArea(v) == groundTruth;
+}
+REGISTER_TEST(1){
+	std::vector<int> v = {2,2,2,2,2,2};
+	int groundTruth = 12;
+	return Solution().largestRectangleArea(v) == groundTruth;
+}
+REGISTER_TEST(2){
+	std::vector<int> v = {1, 2, 3, 4, 5, 4, 3, 2, 1};
+	int groundTruth = 15;
+	return Solution().largestRectangleArea(v) == groundTruth;
+}
+REGISTER_TEST(3){
+	std::vector<int> v = {1, 2, 3, 0, 2, 2, 1, 4, 0, 0, 3, 3, 3, 5, 3, 0};
+	int groundTruth = 15;
+	return Solution().largestRectangleArea(v) == groundTruth;
+}
+#endif
