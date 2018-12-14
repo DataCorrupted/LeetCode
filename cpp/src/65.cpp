@@ -66,7 +66,7 @@ public:
 };
 
 #ifdef DEBUG
-#include "debugUtil.h"
+#include "DebugUtil.h"
 REGISTER_TEST(00){
 	std::string s = " 0 ";
 	bool groundTruth = true;

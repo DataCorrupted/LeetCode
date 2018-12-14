@@ -38,7 +38,7 @@ public:
 };
 
 #ifdef DEBUG
-#include "debugUtil.h"
+#include "DebugUtil.h"
 REGISTER_TEST(0){
 	vector<string> strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
 	vector<vector<string>> groundTruth = {

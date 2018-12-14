@@ -21,7 +21,7 @@ public:
 };
 
 #ifdef DEBUG
-#include "debugUtil.h"
+#include "DebugUtil.h"
 
 REGISTER_TEST(2x3){
 	int m=3, n=2;

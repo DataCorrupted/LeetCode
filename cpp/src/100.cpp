@@ -1,14 +1,8 @@
 #ifdef DEBUG
-struct TreeNode{
-	int val;
-	TreeNode* left;
-	TreeNode* right;
-	TreeNode(int x, TreeNode* left = NULL, TreeNode* right = NULL): val(x), left(left), right(right) {};
-	~TreeNode(){
-		if (left)  { delete left; }
-		if (right) { delete right; }
-	}
-};
+
+#include "TreeNodeG.hpp"
+typedef TreeNodeG<int> TreeNode;
+
 #endif
 
 class Solution{
@@ -24,7 +18,7 @@ public:
 };
 
 #ifdef DEBUG
-#include "debugUtil.h"
+#include "DebugUtil.h"
 
 REGISTER_TEST(0){
 	TreeNode* p = 

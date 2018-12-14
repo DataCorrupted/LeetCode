@@ -68,7 +68,7 @@ public:
 
 #ifdef DEBUG
 
-#include "debugUtil.h"
+#include "DebugUtil.h"
 
 REGISTER_TEST(0){
 	std::vector<string> v = {"This", "is", "an", "example", "of", "text", "justification."};

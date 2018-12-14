@@ -25,7 +25,7 @@ public:
 };
 
 #ifdef DEBUG
-#include "debugUtil.h"
+#include "DebugUtil.h"
 
 REGISTER_TEST(empty){
 	vector<vector<int>> grid;

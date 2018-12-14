@@ -46,7 +46,7 @@ public:
 };
 
 #ifdef DEBUG
-#include "debugUtil.h"
+#include "DebugUtil.h"
 
 REGISTER_TEST(0){
 	vector<int> nums = {1, 2, 3};

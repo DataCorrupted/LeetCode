@@ -10,14 +10,14 @@
 
 using namespace std;
 
-#include "printUtil.h"
-#include "debugUtil.h"
+#include "PrintUtil.h"
+#include "DebugUtil.h"
 
-#include "63.cpp"
+#include "19.cpp"
 
 int main(){
-	for (auto pair: testMap){
-		cout << "test " << pair.first << " passed ... " << boolalpha << pair.second() << endl;
+	for (unsigned i=0; i<testCnt; i++){
+		cout << "test " << testNameVec[i] << " passed ... " << boolalpha << testFuncVec[i]() << endl;
 	}
 	return 0;
 }

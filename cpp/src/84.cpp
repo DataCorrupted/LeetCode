@@ -38,7 +38,7 @@ public:
 };
 
 #ifdef DEBUG
-#include "debugUtil.h"
+#include "DebugUtil.h"
 
 REGISTER_TEST(0){
 	std::vector<int> v = {2,1,5,6,2,3};

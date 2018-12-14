@@ -32,7 +32,7 @@ public:
 };
 
 #ifdef DEBUG
-#include "debugUtil.h"
+#include "DebugUtil.h"
 REGISTER_TEST(0){
 	int target = 8;
 	std::vector<int> nums = {5, 7, 7, 8, 8, 10};
