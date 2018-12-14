@@ -18,7 +18,7 @@ ostream& operator << (ostream& o, vector<T>& v){
 	for (unsigned i=0; i<v.size(); i++){
 		o << v[i];
 		if (i != v.size() - 1) {
-			o << ", \n";
+			o << ", ";
 		}
 	}	
 	o << "]\n";
@@ -28,7 +28,7 @@ ostream& operator << (ostream& o, vector<T>& v){
 template <class T>
 ostream& operator << ( ostream& o, vector<vector<T>>& v){
 	o << "[\n";
-	for (int i=0; i<v.size(); i++){
+	for (unsigned i=0; i<v.size(); i++){
 		o << " " << v[i];
 	}
 	o << "]\n";
