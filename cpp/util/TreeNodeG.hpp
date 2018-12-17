@@ -53,7 +53,7 @@ struct TreeNodeG{
 		return (lhs->val == rhs->val) && (treesEq(lhs->left, rhs->left) && (treesEq(lhs->right, rhs->right)));
 	}
 	friend bool operator == (TreeNodeG& lhs, TreeNodeG& rhs){
-		return listsEq(&lhs, &rhs);
+		return treesEq(&lhs, &rhs);
 	}
 };
 
