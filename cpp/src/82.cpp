@@ -49,7 +49,7 @@ REGISTER_TEST(example_1){
 	ListNode* head = ListNode::vectorToListNode({1, 1, 2});
 	ListNode* groundTruth = ListNode::vectorToListNode({2});
 	head = Solution().deleteDuplicates(head);
-	bool result = ListNode::listsEq(head, groundTruth);
+	bool result = (*head == *groundTruth);
 	delete head;
 	return result;
 }
@@ -57,7 +57,7 @@ REGISTER_TEST(example_2){
 	ListNode* head = ListNode::vectorToListNode({1, 1, 2, 3, 3});
 	ListNode* groundTruth = ListNode::vectorToListNode({2});
 	head = Solution().deleteDuplicates(head);
-	bool result = ListNode::listsEq(head, groundTruth);
+	bool result = (*head == *groundTruth);
 	delete head;
 	return result;	
 }
@@ -65,7 +65,7 @@ REGISTER_TEST(example_3){
 	ListNode* head = ListNode::vectorToListNode({1, 2, 3, 3, 4, 4, 5});
 	ListNode* groundTruth = ListNode::vectorToListNode({1, 2, 5});
 	head = Solution().deleteDuplicates(head);
-	bool result = ListNode::listsEq(head, groundTruth);
+	bool result = (*head == *groundTruth);
 	delete head;
 	return result;	
 }
@@ -73,15 +73,15 @@ REGISTER_TEST(example_4){
 	ListNode* head = ListNode::vectorToListNode({1, 1, 1, 2, 3});
 	ListNode* groundTruth = ListNode::vectorToListNode({2, 3});
 	head = Solution().deleteDuplicates(head);
-	bool result = ListNode::listsEq(head, groundTruth);
+	bool result = (*head == *groundTruth);
 	delete head;
 	return result;	
 }
 REGISTER_TEST(empty){
 	ListNode* head = ListNode::vectorToListNode({});
 	ListNode* groundTruth = ListNode::vectorToListNode({});
-
-	bool result = ListNode::listsEq(Solution().deleteDuplicates(head), groundTruth);
+	head = Solution().deleteDuplicates(head);
+	bool result = (*head == *groundTruth);
 	delete head;
 	return result;	
 }

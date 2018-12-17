@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <sstream>
 
 template <class T>
 struct ListNodeG {
@@ -20,21 +21,31 @@ struct ListNodeG {
 		}
 		return (nodeVec.size() == 0) ? NULL: nodeVec[0];
 	}
+	stringstream toStringStream() {
+		std::stringstream ss;
+		ListNodeG* curr = this;
+		while (curr != NULL){
+
+		}
+		ss << "$\n";
+		return ss;
+	}
+	string toString(){
+		return toStringStream().str();
+	}
+	friend ostream& operator << (ostream& o, const ListNodeG* node){
+		o << node->toString();
+		return o;
+	}
+
 	// This function cannot be overloaded because both operand is pointer.
 	static bool listsEq(const ListNodeG* lhs, const ListNodeG* rhs){
 		if (!lhs && !rhs) { return true; }
 		if (!lhs || !rhs) { return false; }
 		return (lhs->val == rhs->val) && (listsEq(lhs->next, rhs->next));
 	}
-
-	friend ostream& operator << (ostream& o, const ListNodeG* node){
-		o << node->val << " ";
-		if (node->next){
-			o << node->next;
-		} else{
-			o << "$\n";
-		}
-		return o;
+	friend bool operator == (ListNodeG& lhs, ListNodeG& rhs){
+		return listsEq(&lhs, &rhs);
 	}
 };
  
