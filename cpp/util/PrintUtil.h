@@ -47,4 +47,10 @@ ostream& operator << ( ostream& o, map<K, V>& m){
 	return o;
 }
 
+template<class P1, class P2>
+ostream& operator << (ostream& o, const pair<P1, P2>& p){
+	o << "(" << p.first << "," << p.second << ")" << " ";
+	return o;
+}
+
 #endif
