@@ -27,7 +27,6 @@ REGISTER_TEST(example_2){
 REGISTER_TEST(example_3){
 	int n = 1808548329;
 	int groundTruth = 452137076;
-	cout << Solution().trailingZeroes(n);
 	return Solution().trailingZeroes(n) == groundTruth;
 }
 #endif
