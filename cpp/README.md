@@ -2,14 +2,13 @@
 
 Here are all passed codes for LeetCode written in cpp.
 
-## Status: 82/953
+## Status: 84/953
 
 Finished List:
 
 	[1-14]
 	[19-29]
-	[31-37]
-	[39-49]
+	[31-50]
 	[53-70]
 	78
 	[82-84]
