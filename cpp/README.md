@@ -2,7 +2,7 @@
 
 Here are all passed codes for LeetCode written in cpp.
 
-## Status: 92/953
+## Status: 96/961
 
 Finished List:
 
@@ -15,6 +15,7 @@ Finished List:
 	[118-120]
 	[165-169]
 	[171-172]
+	[200-203]
 	409
 
 
@@ -45,4 +46,4 @@ and simply run:
 make
 ```
 
-The test will ship when compilation is done.
+The test will ship itself automatically when compilation is done.

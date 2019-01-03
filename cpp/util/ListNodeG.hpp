@@ -39,7 +39,7 @@ struct ListNodeG {
 	}
 
 	// This function cannot be overloaded because both operand is pointer.
-	static bool listsEq(const ListNodeG* lhs, const ListNodeG* rhs){
+	inline static bool listsEq(const ListNodeG* lhs, const ListNodeG* rhs){
 		if (!lhs && !rhs) { return true; }
 		if (!lhs || !rhs) { return false; }
 		return (lhs->val == rhs->val) && (listsEq(lhs->next, rhs->next));

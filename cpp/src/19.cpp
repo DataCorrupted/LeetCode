@@ -2,7 +2,6 @@
 
 #include "ListNodeG.hpp"
 typedef ListNodeG<int> ListNode;
-
 #endif
 
 class Solution {
