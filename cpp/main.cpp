@@ -1,4 +1,4 @@
-	#include <iostream>
+#include <iostream>
 #include <map>
 #include <vector>
 #include <algorithm>
@@ -13,7 +13,7 @@ using namespace std;
 #include "PrintUtil.h"
 #include "DebugUtil.h"
 
-#include "205.cpp"
+#include "88.cpp"
 
 int main(){
 	for (unsigned i=0; i<testCnt; i++){

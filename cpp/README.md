@@ -2,7 +2,7 @@
 
 Here are all passed codes for LeetCode written in cpp.
 
-## Status: 98/961
+## Status: 100/995
 
 Finished List:
 
@@ -11,6 +11,7 @@ Finished List:
 	[31-50]
 	[53-75]
 	[78-84]
+	[88-89]
 	[100-104]
 	[118-120]
 	[165-169]
