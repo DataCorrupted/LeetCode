@@ -24,16 +24,17 @@ struct ListNodeG {
 	stringstream toStringStream() {
 		std::stringstream ss;
 		ListNodeG* curr = this;
-		while (curr != NULL){
-
+		while (curr){
+			ss << curr->val << " " ;
+			curr = curr->next;
 		}
 		ss << "$\n";
 		return ss;
 	}
-	string toString(){
+	string toString() {
 		return toStringStream().str();
 	}
-	friend ostream& operator << (ostream& o, const ListNodeG* node){
+	friend ostream& operator << (ostream& o, ListNodeG* node){
 		o << node->toString();
 		return o;
 	}
