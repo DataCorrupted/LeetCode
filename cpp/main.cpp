@@ -13,7 +13,7 @@ using namespace std;
 #include "PrintUtil.h"
 #include "DebugUtil.h"
 
-#include "123.cpp"
+#include "304.cpp"
 
 int main(){
 	for (unsigned i=0; i<testCnt; i++){
