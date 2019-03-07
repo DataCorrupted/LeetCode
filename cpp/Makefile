@@ -6,7 +6,7 @@ PREFIX=../bin/
 all: main test
 
 main: main.cpp
-	g++ $(CFLAGS) $(INCLUDE) $(DEBUG) $< -o $(PREFIX)$@
+	clang++ -fsanitize=address $(CFLAGS) $(INCLUDE) $(DEBUG) $< -o $(PREFIX)$@
 
 PHONY.: test
 test: main
