@@ -3,13 +3,26 @@ INCLUDE=-I./src/ -I./util/
 DEBUG=-DDEBUG
 PREFIX=../bin/
 
+ifeq ($(OS),Windows_NT)
+	CXX=g++
+	SANITIZERS=
+else
+	#Linux stuff
+	CXX=clang++
+	SANITIZERS="-fsanitize=address -fsanitize=undefined"
+endif
+
 all: main test
 
 main: main.cpp
-	clang++ -fsanitize=address $(CFLAGS) $(INCLUDE) $(DEBUG) $< -o $(PREFIX)$@
+	$(CXX) $(SANITIZERS) $(CFLAGS) $(INCLUDE) $(DEBUG) $< -o $(PREFIX)$@
 
 PHONY.: test
 test: main
-	@echo "\nCompilation done, testing main... \n"
+	@echo
+	@echo "Compilation done, testing main..."
+	@echo
 	@../bin/main
-	@echo "\nTesting done. \n"
+	@echo
+	@echo "Testing done. "
+	@echo
