@@ -9,7 +9,7 @@ ifeq ($(OS),Windows_NT)
 else
 	#Linux stuff
 	CXX=clang++
-	SANITIZERS="-fsanitize=address -fsanitize=undefined"
+	SANITIZERS=-fsanitize=address -fsanitize=undefined
 endif
 
 all: main test
