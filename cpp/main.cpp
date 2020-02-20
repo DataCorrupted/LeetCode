@@ -14,7 +14,7 @@ using namespace std;
 #include "PrintUtil.h"
 #include "DebugUtil.h"
 
-#include "198.cpp"
+#include "1.cpp"
 
 int main(){
 	for (unsigned i=0; i<testCnt; i++){

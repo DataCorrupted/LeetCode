@@ -13,3 +13,15 @@ public:
         }        
     }
 };
+
+#ifdef DEBUG
+#include "DebugUtil.h"
+
+REGISTER_TEST(0){
+    int target = 9;
+    vector<int> nums({2, 7, 11, 15});
+    vector<int> groundTruth({0, 1});
+    return Solution().twoSum(nums, target) == groundTruth;
+}
+
+#endif
