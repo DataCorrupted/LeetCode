@@ -1,5 +1,5 @@
 #[cfg(feature = "local_testing")]
-use crate::utils::ListNode;
+type ListNode = crate::utils::ListNodeT<i32>;
 
 #[cfg(feature = "local_testing")]
 struct Solution;
@@ -49,8 +49,8 @@ mod test {
         let l2 = ListNode::from_iterable(&[5, 6, 4]);
         let ground_truth = ListNode::from_iterable(&[7, 0, 8]);
         assert!(list_node::eq(
-            Solution::add_two_numbers(l1, l2).clone(),
-            ground_truth.clone()
+            &Solution::add_two_numbers(l1, l2),
+            &ground_truth
         ));
     }
     #[test]
@@ -59,8 +59,8 @@ mod test {
         let l2 = ListNode::from_iterable(&[5]);
         let ground_truth = ListNode::from_iterable(&[0, 1]);
         assert!(list_node::eq(
-            Solution::add_two_numbers(l1, l2).clone(),
-            ground_truth.clone()
+            &Solution::add_two_numbers(l1, l2),
+            &ground_truth
         ));
     }
 }

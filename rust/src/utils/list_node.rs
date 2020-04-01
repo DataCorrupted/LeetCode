@@ -1,30 +1,34 @@
 // Definition for singly-linked list.
 use std::iter::DoubleEndedIterator;
 
-type ListNodePtr = Option<Box<ListNode>>;
+type ListNodePtr<T> = Option<Box<ListNodeT<T>>>;
 
-#[derive(Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: ListNodePtr,
+#[derive(PartialEq, Clone, Debug)]
+pub struct ListNodeT<T: Clone + PartialEq> {
+    pub val: T,
+    pub next: ListNodePtr<T>,
 }
 
-impl<'a> ListNode {
+impl<'a, T> ListNodeT<T>
+where
+    T: Clone + PartialEq,
+{
     #[inline]
-    pub fn new(val: i32) -> Self {
-        ListNode { next: None, val }
+    pub fn new(val: T) -> Self {
+        ListNodeT { next: None, val }
     }
 
     #[allow(dead_code)]
     #[cfg(feature = "local_testing")]
-    pub fn from_iterable<I>(iter: I) -> ListNodePtr
+    pub fn from_iterable<I>(iter: I) -> ListNodePtr<T>
     where
-        I: IntoIterator<Item = &'a i32>,
+        I: IntoIterator<Item = &'a T>,
         <I as IntoIterator>::IntoIter: DoubleEndedIterator,
+        T: 'a,
     {
         let mut head = None;
-        iter.into_iter().rev().for_each(|&val| {
-            let mut node = Box::new(ListNode::new(val));
+        iter.into_iter().rev().for_each(|val| {
+            let mut node = Box::new(ListNodeT::new(val.clone()));
             std::mem::swap(&mut node.next, &mut head);
             head = Some(node);
         });
@@ -34,21 +38,14 @@ impl<'a> ListNode {
 
 #[allow(dead_code)]
 #[cfg(feature = "local_testing")]
-pub fn eq(mut lhs: ListNodePtr, mut rhs: ListNodePtr) -> bool {
-    while lhs.is_some() || rhs.is_some() {
-        // Different length
-        if lhs.is_none() || rhs.is_none() {
-            return false;
-        }
-        let lhs_node = lhs.clone().unwrap();
-        let rhs_node = rhs.clone().unwrap();
-        if lhs_node.val != rhs_node.val {
-            return false;
-        }
-        lhs = lhs_node.next.clone();
-        rhs = rhs_node.next.clone();
+pub fn eq<T>(lhs: &ListNodePtr<T>, rhs: &ListNodePtr<T>) -> bool
+where
+    T: PartialEq + Clone,
+{
+    match (lhs, rhs) {
+        (Some(ref lnode), Some(ref rnode)) => lnode == rnode,
+        _ => false,
     }
-    true
 }
 
 #[cfg(test)]
