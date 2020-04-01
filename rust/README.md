@@ -14,7 +14,9 @@ Rust don't have the (messy) macro and macro guard as C/C++ do.
 However, it provides nice _feature_ that allows you to chose what code get to compile and what code don't.
 Guard a piece of code with `#[cfg(feature = "local_testing")]` and it will not be compiled anywhere but locally.
 
-### Windows
+### Platform
+
+**Windows**
 
 Download the installer [here](https://www.rust-lang.org/tools/install)
 
@@ -28,9 +30,15 @@ rustup toolchain install stable-x86_64-pc-windows-gnu
 rustup default stable-gnu
 ```
 
-### Ubuntu
+**Ubuntu**
 
 Get a install script from [here](https://www.rust-lang.org/tools/install)
+
+## Format
+
+`cargo fmt`
+
+Use the command above to format your code.
 
 ## Testing
 
