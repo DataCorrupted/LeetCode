@@ -36,18 +36,6 @@ where
     }
 }
 
-#[allow(dead_code)]
-#[cfg(feature = "local_testing")]
-pub fn eq<T>(lhs: &ListNodePtr<T>, rhs: &ListNodePtr<T>) -> bool
-where
-    T: PartialEq + Clone,
-{
-    match (lhs, rhs) {
-        (Some(ref lnode), Some(ref rnode)) => lnode == rnode,
-        _ => false,
-    }
-}
-
 #[cfg(test)]
 mod test {
     // See testing in crate::solutions::add_two_numbers

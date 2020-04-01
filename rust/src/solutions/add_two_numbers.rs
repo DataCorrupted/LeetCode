@@ -41,26 +41,19 @@ impl Solution {
 #[cfg(test)]
 mod test {
     use super::*;
-    use crate::utils::list_node;
 
     #[test]
     fn test_add_two_numbers_0() {
         let l1 = ListNode::from_iterable(&[2, 4, 3]);
         let l2 = ListNode::from_iterable(&[5, 6, 4]);
         let ground_truth = ListNode::from_iterable(&[7, 0, 8]);
-        assert!(list_node::eq(
-            &Solution::add_two_numbers(l1, l2),
-            &ground_truth
-        ));
+        assert!(Solution::add_two_numbers(l1, l2) == ground_truth);
     }
     #[test]
     fn test_add_two_numbers_1() {
         let l1 = ListNode::from_iterable(&[5]);
         let l2 = ListNode::from_iterable(&[5]);
         let ground_truth = ListNode::from_iterable(&[0, 1]);
-        assert!(list_node::eq(
-            &Solution::add_two_numbers(l1, l2),
-            &ground_truth
-        ));
+        assert!(Solution::add_two_numbers(l1, l2) == ground_truth);
     }
 }
