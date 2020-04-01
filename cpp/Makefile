@@ -22,7 +22,7 @@ test: main
 	@echo
 	@echo "Compilation done, testing main..."
 	@echo
-	@../bin/main
+	@${PREFIX}/main
 	@echo
 	@echo "Testing done. "
 	@echo
