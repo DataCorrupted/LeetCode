@@ -20,7 +20,7 @@ Download the installer [here](https://www.rust-lang.org/tools/install)
 
 If you are coding on windows, please use `stable-x86_64-pc-windows-gnu` when installing rust, `stable-x86_64-pc-windows-msvc` will lead to link problems.
 
-If somehow you (unfortunatelly) installed `msvc`, do the following:
+If somehow you (unfortunately) installed `msvc`, do the following:
 
 ```sh
 rustup toolchain uninstall stable-x86_64-pc-windows-msvc
@@ -52,4 +52,4 @@ and run:
 cargo test
 ```
 
-The test will ship itself automatically when compilation is done.
+The test will ship itself automatically when the compilation is done.

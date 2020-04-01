@@ -63,4 +63,4 @@ and simply run:
 make
 ```
 
-The test will ship itself automatically when compilation is done.
+The test will ship itself automatically when the compilation is done.
