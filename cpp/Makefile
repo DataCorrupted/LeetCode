@@ -1,7 +1,7 @@
 CFLAGS=-std=c++14 -Wall -Wextra -Wunreachable-code -Werror
-INCLUDE=-I./src/ -I./util/ 
-DEBUG=-DDEBUG
-PREFIX=./target/bin/
+FILE_PREFIX=./src
+INCLUDE=-I./${FILE_PREFIX}/solutions/ -I./${FILE_PREFIX}/util/ 
+BIN_PREFIX=./target/bin/
 
 ifeq ($(OS),Windows_NT)
 	CXX=g++
@@ -14,15 +14,15 @@ endif
 
 all: main test
 
-main: main.cpp
-	$(CXX) $(SANITIZERS) $(CFLAGS) $(INCLUDE) $(DEBUG) $< -o $(PREFIX)$@
+main: ./${FILE_PREFIX}/main.cpp
+	$(CXX) $(SANITIZERS) $(CFLAGS) $(INCLUDE) $< -o $(BIN_PREFIX)$@
 
 PHONY.: test
 test: main
 	@echo
 	@echo "Compilation done, testing main..."
 	@echo
-	@${PREFIX}/main
+	@${BIN_PREFIX}/main
 	@echo
 	@echo "Testing done. "
 	@echo
