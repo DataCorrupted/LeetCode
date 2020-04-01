@@ -2,7 +2,7 @@
 
 Here are all passed codes for LeetCode written in cpp.
 
-## Status: 125/1003
+## Status: 125/1397
 
 Finished List:
 
@@ -22,7 +22,7 @@ Finished List:
 	[306-307]
 	309
 	409
-
+	659
 
 ## Test
 
