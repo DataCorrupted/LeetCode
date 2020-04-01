@@ -19,12 +19,11 @@ using namespace std;
 #include "solutions/659.cpp"
 
 int main() {
-  for (auto pair: TEST_NAME_FUNC_PAIR_VEC) {
+  for (auto pair : TEST_NAME_FUNC_PAIR_VEC) {
     std::string& name = pair.first;
     bool test_result = pair.second();
-    cout << "test " << name << " passed ... " << 
-        ((test_result) ? GREEN : RED) << boolalpha
-         << test_result << WHITE << endl;
+    cout << "test " << name << " passed ... " << ((test_result) ? GREEN : RED)
+         << boolalpha << test_result << WHITE << endl;
   }
   return 0;
 }
