@@ -24,7 +24,19 @@ Finished List:
 	409
 	659
 
-## Test
+## Coding
+
+### Windows
+
+You need [`MinGw`](http://www.mingw.org/) installed to code in Windows.
+
+I never tried VS, maybe it works too.
+
+### Ubuntu
+
+I used `clang` as my toolchain to use ASan, so get it installed.
+
+## Testing
 
 Every file in _src/_ can be compiled against _main.cpp_.  
 We have marco defined test cases.   

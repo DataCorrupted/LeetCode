@@ -1,7 +1,7 @@
 CFLAGS=-std=c++14 -Wall -Wextra -Wunreachable-code -Werror
 INCLUDE=-I./src/ -I./util/ 
 DEBUG=-DDEBUG
-PREFIX=../bin/
+PREFIX=./target/bin/
 
 ifeq ($(OS),Windows_NT)
 	CXX=g++
