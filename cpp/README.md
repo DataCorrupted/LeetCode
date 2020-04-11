@@ -26,15 +26,24 @@ Finished List:
 
 ## Coding
 
-### Windows
+### Platform
+
+**Windows**
 
 You need [`MinGw`](http://www.mingw.org/) installed to code in Windows.
 
 I never tried VS, maybe it works too.
 
-### Ubuntu
+**Ubuntu**
 
 I used `clang` as my toolchain to use ASan, so get it installed.
+
+### Format
+
+By default all the file format should be using [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html).
+To achieve this, you can use 
+
+`clang-format -i <file-name> -style=Google`
 
 ## Testing
 
