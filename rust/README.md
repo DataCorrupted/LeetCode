@@ -1,12 +1,12 @@
-# LeetCode/cpp
+# LeetCode/rust
 
 Here are all passed codes for LeetCode written in rust.
 
-## Status: 2/1397
+## Status: 3/1411
 
 Finished List:
 
-	[1-2]
+	[1-3]
 
 ## Coding
 
