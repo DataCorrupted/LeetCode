@@ -1,27 +1,27 @@
 class Solution {
-public:
-    int numDecodings(string s) {
-        if (s[0] == '0') { return 0; }
-        std::vector<int> opt;
-        opt.push_back(1);
-        opt.push_back(1);
-        for (size_t i=1; i< s.size(); i++) {
-            if (s[i] == '0') { 
-                if (s[i-1] == '0' || s[i-1] >= '3') {
-                    return 0; 
-                } else {
-                    opt.push_back(opt[i-1]);
-                }
-            } else if (s[i-1] == '1' || (s[i-1] == '2' && s[i] <= '6')) {
-                opt.push_back(
-                    opt[i] + opt[i-1]
-                );
-            } else {
-                opt.push_back(opt[i]);
-            }
-        }
-        return opt[s.size()];
+ public:
+  int numDecodings(string s) {
+    if (s[0] == '0') {
+      return 0;
     }
+    std::vector<int> opt;
+    opt.push_back(1);
+    opt.push_back(1);
+    for (size_t i = 1; i < s.size(); i++) {
+      if (s[i] == '0') {
+        if (s[i - 1] == '0' || s[i - 1] >= '3') {
+          return 0;
+        } else {
+          opt.push_back(opt[i - 1]);
+        }
+      } else if (s[i - 1] == '1' || (s[i - 1] == '2' && s[i] <= '6')) {
+        opt.push_back(opt[i] + opt[i - 1]);
+      } else {
+        opt.push_back(opt[i]);
+      }
+    }
+    return opt[s.size()];
+  }
 };
 
 #ifdef DEBUG
