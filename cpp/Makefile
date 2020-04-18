@@ -26,3 +26,6 @@ test: main
 	@echo
 	@echo "Testing done. "
 	@echo
+
+fmt :
+	clang-format -i src/solutions/*.cpp -style=google
