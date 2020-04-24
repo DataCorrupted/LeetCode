@@ -12,7 +12,16 @@
 using namespace std;
 
 template <class T>
-ostream &operator<<(ostream &o, vector<T> &v) {
+ostream &operator<<(ostream &o, const vector<T> &v);
+template <class T>
+ostream &operator<<(ostream &o, const vector<vector<T>> &v);
+template <class K, class V>
+ostream &operator<<(ostream &o, const map<K, V> &m);
+template <class P1, class P2>
+ostream &operator<<(ostream &o, const pair<P1, P2> &p);
+
+template <class T>
+ostream &operator<<(ostream &o, const vector<T> &v) {
   o << '[';
   for (unsigned i = 0; i < v.size(); i++) {
     o << v[i];
@@ -25,7 +34,7 @@ ostream &operator<<(ostream &o, vector<T> &v) {
 }
 
 template <class T>
-ostream &operator<<(ostream &o, vector<vector<T>> &v) {
+ostream &operator<<(ostream &o, const vector<vector<T>> &v) {
   o << "[\n";
   for (unsigned i = 0; i < v.size(); i++) {
     o << " " << v[i];
@@ -35,7 +44,7 @@ ostream &operator<<(ostream &o, vector<vector<T>> &v) {
 }
 
 template <class K, class V>
-ostream &operator<<(ostream &o, map<K, V> &m) {
+ostream &operator<<(ostream &o, const map<K, V> &m) {
   o << "{";
   for (auto iter = m.begin(); iter != m.end(); ++iter) {
     o << iter->first << ": " << iter->second;
