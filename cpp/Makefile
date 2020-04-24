@@ -2,13 +2,12 @@ CFLAGS=-std=c++14 -Wall -Wextra -Wunreachable-code -Werror
 FILE_PREFIX=./src
 INCLUDE=-I./${FILE_PREFIX}/solutions/ -I./${FILE_PREFIX}/util/ 
 BIN_PREFIX=./target/bin/
+CXX=clang++
 
 ifeq ($(OS),Windows_NT)
-	CXX=g++
 	SANITIZERS=
 else
 	#Linux stuff
-	CXX=clang++
 	SANITIZERS=-fsanitize=address -fsanitize=undefined
 endif
 
