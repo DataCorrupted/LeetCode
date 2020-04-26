@@ -74,3 +74,50 @@ struct TreeNodeG {
     return treesEq(&lhs, &rhs);
   }
 };
+
+string serialize(TreeNodeG<int> *root) {
+  std::stringstream ss;
+  if (!root) {
+    ss << "{ null }";
+  } else {
+    ss << "{ val: " << std::to_string(root->val)
+       << ", left: " << serialize(root->left)
+       << ", right: " << serialize(root->right) << " }";
+  }
+  return ss.str();
+}
+/// s[idx] has to be '{'.
+size_t find_match_right_curve(string &s, size_t idx) {
+  int num_curve = 0;
+  while (true) {
+    if (s[idx] == '{') {
+      num_curve++;
+    }
+    if (s[idx] == '}') {
+      num_curve--;
+    }
+    if (num_curve == 0) {
+      return idx;
+    }
+    idx++;
+    if (idx == s.size()) {
+      return idx - 1;
+    }
+  }
+}
+
+TreeNodeG<int> *deserialize(string s) {
+  if (s == "{ null }") {
+    return nullptr;
+  }
+  size_t val_start = 7;
+  size_t val_end = s.find(",");
+  size_t left_start = val_end + 8;
+  size_t left_end = find_match_right_curve(s, left_start);
+  size_t right_start = left_end + 10;
+  size_t right_end = find_match_right_curve(s, right_start);
+  return new TreeNodeG<int>(
+      std::stoi(s.substr(val_start, val_end - val_start)),
+      deserialize(s.substr(left_start, left_end - left_start + 1)),
+      deserialize(s.substr(right_start, right_end - right_start + 1)));
+}
