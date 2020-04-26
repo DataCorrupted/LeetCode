@@ -16,7 +16,7 @@ using namespace std;
 
 #include "DebugUtil.h"
 #include "PrintUtil.h"
-#include "solutions/208.hpp"
+#include "solutions/94.hpp"
 
 int main() {
   for (auto pair : TEST_NAME_FUNC_PAIR_VEC) {
